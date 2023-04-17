@@ -7,10 +7,12 @@ from typing import Optional
 from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect
 from fastapi.templating import Jinja2Templates
 from langchain.vectorstores import VectorStore
-
+import os
 from callback import QuestionGenCallbackHandler, StreamingLLMCallbackHandler
 from query_data import get_chain
 from schemas import ChatResponse
+
+os.environ["OPENAI_API_KEY"] = input("Enter your OpenAI API key: ")
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")

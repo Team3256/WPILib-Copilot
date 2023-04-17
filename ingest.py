@@ -1,15 +1,16 @@
 """Load html from files, clean up, split, ingest into Weaviate."""
 import pickle
-
+import os
 from langchain.document_loaders import ReadTheDocsLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores.faiss import FAISS
 
+os.environ["OPENAI_API_KEY"] = input("Enter your OpenAI API key: ")
 
 def ingest_docs():
     """Get documents from web pages."""
-    loader = ReadTheDocsLoader("langchain.readthedocs.io/en/latest/")
+    loader = ReadTheDocsLoader("docs.wpilib.org/en/stable/")
     raw_documents = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,

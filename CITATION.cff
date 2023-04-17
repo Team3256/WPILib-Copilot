@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: WPILib Copilot
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Akhil
+    family-names: Datla
+repository-code: 'https://github.com/Team3256/WPILib-Copilot'
+keywords:
+  - WPILib
+  - LangChain
+  - FastAPI
+  - Artificial Intelligence
+  - Machine Learning
+license: GPL-3.0
+preferred-citation:
+    type: software
+    authors:
+      - given-names: Harrison
+        family-names: Chase
+    title: "chat-langchain"
+    date-released: "2023-01-16"
+    repository-code: "https://github.com/hwchase17/chat-langchain"
